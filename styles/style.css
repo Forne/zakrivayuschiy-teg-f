@@ -75,6 +75,8 @@
   font-size: 14px;
   text-transform: uppercase;
   background-color: transparent;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
 .theme-menu__button:hover {
@@ -89,6 +91,7 @@
   height: 2px;
   margin-top: 2px;
   background-color: var(--themes-main-color);
+  transition: width 0.5s ease-in-out;
 }
 
 .theme-menu__button:focus-within {
@@ -97,11 +100,11 @@
 
 .theme-menu__button:focus-within::after {
   width: 85%;
-  transition: width 0.5s ease-in-out;
 }
 
 .theme-menu__button:disabled {
   opacity: 0.5;
+  cursor: default;
 }
 
 .theme-menu__button:disabled::before {
@@ -191,8 +194,18 @@
 /* utils */
 
 .card__icon-button {
+  padding: 0;
   border: none;
   background-color: transparent;
+  /* transition: border 0.5s ease; */
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-within {
+  /*outline: 2px solid var(--themes-main-color);*/
 }
 
 .card__like-button {
@@ -216,12 +229,12 @@
   border: 2px solid var(--themes-main-color);
   background-color: transparent;
   cursor: pointer;
+  transition: box-shadow 0.5s ease-in-out;
 }
 
 .button:focus-visible {
   box-shadow: 2px 2px var(--themes-main-color);
   outline: none;
-  transition: box-shadow 0.5s ease-in-out;
 }
 
 .button::before {
@@ -233,6 +246,7 @@
   width: 0%;
   height: 100%;
   background-color: var(--themes-main-color);
+  transition: width 0.5s ease-in-out;
 }
 
 .button:hover::before {
@@ -247,12 +261,18 @@
   line-height: 90%;
 }
 
+.button .button__text {
+  transition: color 0.5s ease-in-out;
+}
+
 .button:hover .button__text {
   color: var(--themes-backgroud-color);
+}
+
+.button svg {
   transition: color 0.5s ease-in-out;
 }
 
 .button:hover svg {
   color: var(--themes-backgroud-color);
-  transition: color 0.5s ease-in-out;
 }

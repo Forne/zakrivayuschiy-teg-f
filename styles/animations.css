@@ -22,3 +22,64 @@
     transform: translateX(50%);
   }
 }
+
+@keyframes like-zoom {
+  from {
+    scale: 1;
+  }
+
+  to {
+    scale: 1.5;
+  }
+}
+
+@keyframes like-sparks {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: #FF0000;
+  }
+}
+
+/* like hover */
+.like-icon:hover .main-body, .like-icon:hover .core {
+  fill: var(--themes-main-color);
+  transition: fill 0.3s linear;
+}
+
+/* like active */
+.like-icon:active .main-body, .like-icon:active .core {
+  fill: #FF0000;
+  transition: fill 0.3s 0.5s linear;
+}
+
+/* like click */
+.like-icon .main-body, .like-icon .core {
+  transition: fill 0.3s 0.3s linear;
+}
+
+.like-icon.is-liked .main-body, .like-icon.is-liked .core {
+  fill: #FF0000;
+  transition: fill 0.3s 0.3s linear;
+}
+
+.like-icon .contour {
+  transition: fill 0.1s 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: #FF0000;
+  transition: fill 0.3s 0.3s linear;
+}
+
+.like-icon.is-liked .body {
+  transform-origin: center;
+  animation: like-zoom 0.1s 0.3s ease-in;
+}
+
+.like-icon.is-liked .sparks {
+  transform-origin: center;
+  animation: like-sparks 0.3s 0.3s ease-in;
+}
