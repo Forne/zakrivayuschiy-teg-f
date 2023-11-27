@@ -214,6 +214,7 @@
   padding: 0;
   background-color: transparent;
   cursor: pointer;
+  z-index: 1;
 }
 
 .card__icon-button:focus {
@@ -229,10 +230,12 @@
   outline-offset: -2px;
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: -1;
 }
 
 .card__icon-button:focus-within::before {
   opacity: 100;
+  z-index: 0;
 }
 
 .card__like-button {
