@@ -223,12 +223,6 @@
   padding: 9px 17px;
 }
 
-.footer__button {
-  gap: 8px;
-  height: 55px;
-  padding: 15px 20px;
-}
-
 /* btn */
 
 .button {
@@ -241,6 +235,13 @@
   background-color: transparent;
   transition: box-shadow 0.5s ease-in-out;
   cursor: pointer;
+}
+
+.footer__button {
+  gap: 8px;
+  height: 55px;
+  padding: 15px 20px;
+  background: var(--themes-backgroud-color);
 }
 
 .button:focus-visible {
