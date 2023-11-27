@@ -319,6 +319,7 @@
 
   .button svg {
     transition: none;
+    mix-blend-mode: difference;
   }
 
   .button:hover .button__text {
@@ -330,10 +331,6 @@
   }
 
   .button__text {
-    mix-blend-mode: difference;
-  }
-
-  .button svg {
     mix-blend-mode: difference;
   }
 }
