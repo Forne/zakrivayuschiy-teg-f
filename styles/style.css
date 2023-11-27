@@ -246,6 +246,10 @@
 
 /* btn */
 
+.button__container {
+  background: var(--themes-backgroud-color);
+}
+
 .button {
   position: relative;
   z-index: 0;
@@ -253,7 +257,7 @@
   justify-content: center;
   align-items: center;
   border: 2px solid var(--themes-main-color);
-  background-color: transparent;
+  background: transparent;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -262,7 +266,6 @@
   gap: 8px;
   min-height: 55px;
   padding: 15px 20px;
-  background: var(--themes-backgroud-color);
 }
 
 .button:focus-visible {
@@ -291,12 +294,48 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 90%;
-  mix-blend-mode: difference;
+}
+
+.button .button__text {
+  transition: color 0.5s ease-in-out;
+}
+
+.button:hover .button__text {
+  color: var(--themes-backgroud-color);
 }
 
 .button svg {
   transition: color 0.5s ease-in-out;
-  mix-blend-mode: difference;
+}
+
+.button:hover svg {
+  color: var(--themes-backgroud-color);
+}
+
+@supports (mix-blend-mode: difference) {
+  .button .button__text {
+    transition: none;
+  }
+
+  .button svg {
+    transition: none;
+  }
+
+  .button:hover .button__text {
+    color: inherit;
+  }
+
+  .button:hover svg {
+    color: inherit;
+  }
+
+  .button__text {
+    mix-blend-mode: difference;
+  }
+
+  .button svg {
+    mix-blend-mode: difference;
+  }
 }
 
 /* dialog */
