@@ -145,7 +145,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: right;
+  object-position: center;
   aspect-ratio: 1 / 1;
 }
 
@@ -174,9 +174,9 @@
 .post__content {
   display: flex;
   flex-direction: column;
-  gap: 27px;
+  gap: 26px;
   padding: 25px;
-  padding-bottom: 23px;
+  padding-bottom: 22px;
   font-size: 18px;
   line-height: 21px;
   font-variation-settings: "wdth" var(--themes-font-weight-content);
@@ -185,7 +185,8 @@
 .post__buttons {
   display: flex;
   justify-content: end;
-  gap: 10px;
+  gap: 7px;
+  padding-bottom: 3px;
 }
 
 /* footer */
@@ -198,10 +199,13 @@
 /* utils */
 
 .card__icon-button {
+  display: flex;
+  align-items: end;
+  height: 38px;
   border: none;
   padding: 0;
   background-color: transparent;
-  transition: border 0.5s ease;
+  transition: outline 0.5s ease-in;
 }
 
 .card__icon-button:focus {
@@ -210,6 +214,7 @@
 
 .card__icon-button:focus-within {
   outline: 2px solid var(--themes-main-color);
+  outline-offset: -2px;
 }
 
 .card__like-button {
@@ -291,6 +296,7 @@ dialog::backdrop {
 
 .dialog {
   width: calc(100vw * (352 / 1440));
+  background: var(--themes-backgroud-color);
   min-width: 341px;
   border: 2px solid var(--themes-main-color);
   padding: 30px;
