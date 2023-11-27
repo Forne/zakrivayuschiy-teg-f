@@ -15,6 +15,346 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+  width: calc(100vw * (700 / 1440));
+  min-width: 430px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  color: var(--themes-main-color);
+  font-family: var(--font-main);
+  background: var(--background);
+  background-attachment: fixed;
+  font-variation-settings: "wdth" var(--themes-font-weight-content);
+}
+
+@media (width <= 450px) {
+  .page {
+    width: 100%;
+    min-width: 320px;
+  }
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 23px;
+  margin-bottom: 99px;
+  border: 2px solid var(--themes-main-color);
+  padding: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) 0 25px 0;
+  font-family: var(--font-accent);
+  background-color: var(--themes-backgroud-color);
+}
+
+.header__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-transform: uppercase;
+}
+
+.header__description {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-transform: uppercase;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding-left: 18px;
+}
+
+.theme-menu__button {
+  position: relative;
+  border: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: transparent;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+.theme-menu__button::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0%;
+  height: 2px;
+  margin-top: 2px;
+  background-color: var(--themes-main-color);
+  transition: width 0.5s ease-in-out;
+}
+
+.theme-menu__button:focus-within {
+  outline: none;
+}
+
+.theme-menu__button:focus-within::after {
+  width: 85%;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  left: -20px;
+  animation: choose 0.5s infinite ease-in-out alternate;
+}
+
+/* main */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Post */
+.post {
+  border: 2px solid var(--themes-main-color);
+  background-color: var(--themes-backgroud-color);
+}
+
+.post__title {
+  padding: 5px 10px;
+  font-size: 18px;
+  font-variation-settings: "wdth" var(--themes-font-weight-title);
+}
+
+.post__cover {
+  position: relative;
+  border-top: 2px solid var(--themes-main-color);
+  border-bottom: 2px solid var(--themes-main-color);
+}
+
+.post__cover__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1 / 1;
+}
+
+.post__cover__watermark {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  opacity: 0.5;
+  color: var(--themes-main-color);
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-size: 14px;
+  text-shadow: 0 0 1px var(--themes-backgroud-color);
+}
+
+@supports (
+  (text-stroke: 2px var(--themes-backgroud-color)) and
+    (mix-blend-mode: hard-light)
+) {
+  .post__cover__watermark {
+    text-stroke: 2px var(--themes-backgroud-color);
+    mix-blend-mode: hard-light;
+  }
+}
+
+.post__content {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 25px;
+  padding-bottom: 22px;
+  font-size: 18px;
+  line-height: 21px;
+  font-variation-settings: "wdth" var(--themes-font-weight-content);
+}
+
+.post__buttons {
+  display: flex;
+  justify-content: end;
+  gap: 7px;
+  padding-bottom: 3px;
+}
+
+/* footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* utils */
+
+.card__icon-button {
+  display: flex;
+  align-items: end;
+  height: 38px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  transition: outline 0.5s ease-in;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-within {
+  outline: 2px solid var(--themes-main-color);
+  outline-offset: -2px;
+}
+
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  padding: 9px 17px;
+}
+
+/* btn */
+
+.button {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--themes-main-color);
+  background-color: transparent;
+  transition: box-shadow 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.footer__button {
+  gap: 8px;
+  height: 55px;
+  padding: 15px 20px;
+  background: var(--themes-backgroud-color);
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px var(--themes-main-color);
+  outline: none;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 0%;
+  height: 100%;
+  background-color: var(--themes-main-color);
+  transition: width 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  width: 100%;
+  transition: width 0.5s ease-in-out;
+}
+
+.button__text {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 90%;
+}
+
+.button .button__text {
+  transition: color 0.5s ease-in-out;
+}
+
+.button:hover .button__text {
+  color: var(--themes-backgroud-color);
+}
+
+.button svg {
+  transition: color 0.5s ease-in-out;
+}
+
+.button:hover svg {
+  color: var(--themes-backgroud-color);
+}
+
+/* dialog */
+dialog::backdrop {
+  opacity: 0.75;
+  background: var(--themes-main-color, #000);
+}
+
+.dialog {
+  width: calc(100vw * (352 / 1440));
+  min-width: 341px;
+  border: 2px solid var(--themes-main-color);
+  padding: 30px;
+  background: var(--themes-backgroud-color);
+}
+
+.dialog__container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: var(--themes-main-color);
+}
+
+.dialog__warning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.dialog__button {
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 38px;
+  padding: 9px 17px;
+}
+
+/* filters */
+.image_brightness {
+  filter: brightness(130%);
+}
+
+.image_contrast {
+  filter: contrast(150%);
+}
+
+.image_blur {
+  filter: blur(0.3rem);
+}
+
+.image_opacity {
+  filter: opacity(0.8);
+}
+
+.image_grayscale {
+  filter: grayscale(0.8);
+}
+
+.image_saturate {
+  filter: saturate(158%);
+}
+
+.image_sepia {
+  filter: sepia(80%);
 }
