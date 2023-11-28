@@ -252,12 +252,11 @@
 
 .button {
   position: relative;
-  z-index: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 2px solid var(--themes-main-color);
-  background: transparent;
+  background: var(--themes-backgroud-color);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -278,7 +277,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
   width: 0%;
   height: 100%;
   background-color: var(--themes-main-color);
@@ -294,6 +292,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 90%;
+  color: var(--themes-button-text-color);
 }
 
 .button .button__text {
@@ -323,11 +322,11 @@
   }
 
   .button:hover .button__text {
-    color: inherit;
+    color: var(--themes-button-text-color);
   }
 
   .button:hover svg {
-    color: inherit;
+    color: var(--themes-button-text-color);
   }
 
   .button__text {
