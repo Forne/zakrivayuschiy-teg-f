@@ -3,7 +3,7 @@
   <style>
     @media (prefers-color-scheme: dark) {
       .favicon {
-        fill: white;
+        fill: #00cc14;
       }
     }
     @media (prefers-color-scheme: light) {
@@ -12,7 +12,7 @@
       }
     }
   </style>
-  <g class="favicon" fill="white">
+  <g class="favicon" fill="#00cc14">
     <path d="M128 128H160V160H128V128Z" />
     <path d="M96 128V96H128V128H96Z" />
     <path d="M96 128V160H64V128H96Z" />
